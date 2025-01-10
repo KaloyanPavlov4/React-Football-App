@@ -38,7 +38,7 @@ export default function Navigation() {
 
   return (
     <AppBar
-      position="fixed"
+      position='fixed'
       sx={{
         boxShadow: 0,
         bgcolor: 'transparent',
@@ -46,17 +46,17 @@ export default function Navigation() {
         mt: 'calc(var(--template-frame-height, 0px) + 28px)',
       }}
     >
-      <Container maxWidth="lg">
-        <StyledToolbar variant="dense" disableGutters>
-          <Typography sx={{ mr: 3 }} color="primary">Football Api</Typography>
+      <Container maxWidth='lg'>
+        <StyledToolbar variant='dense' disableGutters>
+          <Typography sx={{ mr: 3 }} color='primary'>Football Api</Typography>
           <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, alignItems: 'center', px: 0 }}>
-            <Button variant="text" color="primary" size="small">
+            <Button variant='text' color='primary' size='small'>
                 Leagues
             </Button>
-            <Button variant="text" color="primary" size="small">
+            <Button variant='text' color='primary' size='small'>
                 Cups
             </Button>
-            <Button variant="text" color="primary" size="small">
+            <Button variant='text' color='primary' size='small'>
                 Upcoming matches
             </Button>
           </Box>
@@ -67,11 +67,11 @@ export default function Navigation() {
               alignItems: 'center',
             }}
           >
-            <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
+            <IconButton aria-label='Menu button' onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
             <Drawer
-              anchor="top"
+              anchor='top'
               open={open}
               onClose={toggleDrawer(false)}
               PaperProps={{
