@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 
 const ImageComponent = styled('img')()
 
-export default function TableofCompetitions({ data }) {
+export default function TableLeagues({ data }) {
   return (
     <div style={{ padding: '2px' }}>
       <TableContainer component={Paper} sx={{ backgroundColor: '#333' }}>
@@ -12,7 +12,7 @@ export default function TableofCompetitions({ data }) {
             <TableRow>
               <TableCell>Code</TableCell>
               <TableCell>Name</TableCell>
-              <TableCell>Country</TableCell>
+              <TableCell sx={{ display: { xs:'none', md:'table-cell' } }}>Country</TableCell>
               <TableCell>Details</TableCell>
             </TableRow>
           </TableHead>
@@ -22,13 +22,13 @@ export default function TableofCompetitions({ data }) {
                 <TableCell>{league.code}</TableCell>
                 <TableCell>
                   <Box sx={{ display:'flex', flexDirection:'row', gap:4 }}>
-                    <ImageComponent sx={{ display: { xs:'none', md:'block' }, height:'auto', maxWidth: '10%' }} src={league.emblem}/>
+                    <ImageComponent sx={{ display: { xs:'none', md:'inline-block' }, height:'auto', maxWidth: '10%' }} src={league.emblem}/>
                     <p>{league.name}</p>
                   </Box>
                 </TableCell>
-                <TableCell>
+                <TableCell sx = {{ display: { xs:'none', md:'table-cell' } }}>
                   <Box sx={{ display:'flex', flexDirection:'row', gap:2 }}>
-                    <ImageComponent sx={{ display: { xs:'none', md:'block' }, height:'auto', maxWidth: '25%' }} src={league.area.flag}/>
+                    <ImageComponent sx={{ height:'auto', maxWidth: '25%' }} src={league.area.flag}/>
                     <p>{league.area.name}</p>
                   </Box>
                 </TableCell>

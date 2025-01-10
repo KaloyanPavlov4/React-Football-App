@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from '@mui/material'
-import { getAllLeagues } from '../../services/football-service'
+import { getAllCups } from '../../services/football-service'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
-import TableLeagues from './TableLeagues'
 import Hero from './Hero'
+import TableCups from './TableCups'
 
 const StyledBox = styled('div')(() => {
   const theme = useTheme()
@@ -19,26 +19,26 @@ const StyledBox = styled('div')(() => {
 })
 
 
-export default function Leagues() {
-  const [leagues, setLeagues] = useState([])
+export default function Cups() {
+  const [cups, setCups] = useState([])
 
   useEffect(() => {
-    const fetchLeagues = async () => {
-      setLeagues(await getAllLeagues())
+    const fetchCups = async () => {
+      setCups(await getAllCups())
     }
-    fetchLeagues()
+    fetchCups()
   }, [])
 
-  if(!leagues) {
+  if(!cups) {
     return <Box>Empty</Box>
   }
 
 
   return (
     <Box sx={(theme) => ({ marginTop: theme.spacing(12) })}>
-      <Hero header={'Leagues'} body={'See them'}/>
+      <Hero header={'Cups'} body={'See them'}/>
       <StyledBox>
-        <TableLeagues data={leagues}/>
+        <TableCups data={cups}/>
       </StyledBox>
     </Box>
   )
