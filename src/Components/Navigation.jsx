@@ -51,22 +51,13 @@ export default function Navigation() {
           <Typography sx={{ mr: 3 }} color="primary">Football Api</Typography>
           <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, alignItems: 'center', px: 0 }}>
             <Button variant="text" color="primary" size="small">
-                Features
+                Leagues
             </Button>
             <Button variant="text" color="primary" size="small">
-                Testimonials
+                Cups
             </Button>
             <Button variant="text" color="primary" size="small">
-                Highlights
-            </Button>
-            <Button variant="text" color="primary" size="small">
-                Pricing
-            </Button>
-            <Button variant="text" color="primary" size="small" sx={{ minWidth: 0 }}>
-                FAQ
-            </Button>
-            <Button variant="text" color="primary" size="small" sx={{ minWidth: 0 }}>
-                Blog
+                Upcoming matches
             </Button>
           </Box>
           <Box
@@ -101,12 +92,9 @@ export default function Navigation() {
                   </IconButton>
                 </Box>
 
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
-                <MenuItem>Blog</MenuItem>
+                <MenuItem>Leagues</MenuItem>
+                <MenuItem>Cups</MenuItem>
+                <MenuItem>Upcoming matches</MenuItem>
               </Box>
             </Drawer>
           </Box>
