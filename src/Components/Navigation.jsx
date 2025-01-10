@@ -48,24 +48,24 @@ export default function Navigation() {
     >
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
-          <Typography sx={{ mr: 3 }} color="info">Football Api</Typography>
+          <Typography sx={{ mr: 3 }} color="primary">Football Api</Typography>
           <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, alignItems: 'center', px: 0 }}>
-            <Button variant="text" color="info" size="small">
+            <Button variant="text" color="primary" size="small">
                 Features
             </Button>
-            <Button variant="text" color="info" size="small">
+            <Button variant="text" color="primary" size="small">
                 Testimonials
             </Button>
-            <Button variant="text" color="info" size="small">
+            <Button variant="text" color="primary" size="small">
                 Highlights
             </Button>
-            <Button variant="text" color="info" size="small">
+            <Button variant="text" color="primary" size="small">
                 Pricing
             </Button>
-            <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+            <Button variant="text" color="primary" size="small" sx={{ minWidth: 0 }}>
                 FAQ
             </Button>
-            <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+            <Button variant="text" color="primary" size="small" sx={{ minWidth: 0 }}>
                 Blog
             </Button>
           </Box>

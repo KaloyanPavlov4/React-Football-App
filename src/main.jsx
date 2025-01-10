@@ -4,15 +4,21 @@ import App from './Components/App.jsx'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
     mode: 'dark',
+    primary: {
+      main: '#e09eff',
+    },
+    secondary: {
+      main: '#fa8334',
+    },
   },
 })
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline/>
       <App />
     </ThemeProvider>
