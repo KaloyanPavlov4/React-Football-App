@@ -9,15 +9,6 @@ export default [
     'emblem': 'https://crests.football-data.org/bsa.png',
   },
   {
-    'id': 2016,
-    'area': {
-      'name': 'England',
-      'flag': 'https://crests.football-data.org/770.svg'
-    },
-    'name': 'Championship',
-    'emblem': 'https://crests.football-data.org/ELC.png',
-  },
-  {
     'id': 2021,
     'area': {
       'name': 'England',
@@ -25,6 +16,15 @@ export default [
     },
     'name': 'Premier League',
     'emblem': 'https://crests.football-data.org/PL.png'
+  },
+  {
+    'id': 2016,
+    'area': {
+      'name': 'England',
+      'flag': 'https://crests.football-data.org/770.svg'
+    },
+    'name': 'Championship',
+    'emblem': 'https://crests.football-data.org/ELC.png',
   },
   {
     'id': 2015,
