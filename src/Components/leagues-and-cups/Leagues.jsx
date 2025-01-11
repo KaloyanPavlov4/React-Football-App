@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
-import { useTheme } from '@mui/material'
-import { getAllLeagues } from '../../services/football-service'
+import { Grid2 as Grid, useTheme } from '@mui/material'
+import leagues from '../../data/leagues'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
-import TableLeagues from './TableLeagues'
 import Hero from './Hero'
+import LeagueCard from './LeagueCard'
 
 const StyledBox = styled('div')(() => {
   const theme = useTheme()
@@ -14,31 +13,25 @@ const StyledBox = styled('div')(() => {
     borderRadius: theme.shape.borderRadius,
     border: '1px solid',
     borderColor: theme.palette.primary.dark,
-    boxShadow: '0 0 2px 3px hsl(281, 50.00%, 50.00%)'
+    boxShadow: '0 0 2px 3px hsl(281, 50.00%, 50.00%)',
   }
 })
 
 
 export default function Leagues() {
-  const [leagues, setLeagues] = useState([])
-
-  useEffect(() => {
-    const fetchLeagues = async () => {
-      setLeagues(await getAllLeagues())
-    }
-    fetchLeagues()
-  }, [])
-
-  if(!leagues) {
-    return <Box>Empty</Box>
-  }
-
-
   return (
     <Box sx={(theme) => ({ marginTop: theme.spacing(12) })}>
       <Hero header={'Leagues'} body={'See them'}/>
       <StyledBox>
-        <TableLeagues data={leagues}/>
+        <Grid   container
+          spacing={3}
+          justifyContent="center"
+          alignItems="flex-start"
+          sx={{
+            padding: 2,
+          }}>
+          {leagues.map(league => (<LeagueCard key={league.id} league={league}/>))}
+        </Grid>
       </StyledBox>
     </Box>
   )
