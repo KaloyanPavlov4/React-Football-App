@@ -1,14 +1,12 @@
 import Container from '@mui/material/Container'
 import Navigation from './Navigation'
-import Cups from './leagues-and-cups/Cups'
-import Leagues from './leagues-and-cups/Leagues'
+import LeagueDetails from './leagues/LeagueDetails'
 
 export default function App() {
   return (
     <Container>
       <Navigation/>
-      <Cups/>
-      <Leagues/>
+      <LeagueDetails id={2021}/>
     </Container>
   )
 }

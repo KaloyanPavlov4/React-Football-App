@@ -23,15 +23,17 @@ export default function CupCard ({ cup }) {
         boxSizing: 'border-box',
         background: 'linear-gradient(145deg, #1f1f1f, #333333)',
         color: '#fff',
-        borderRadius: '15px',
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
+        borderRadius: (theme) => theme.shape.borderRadius,
+        border: '1px solid',
+        borderColor: (theme) => theme.palette.primary.dark,
+        boxShadow: '0 0 2px 3px hsl(349, 85.70%, 30%)',
       }}
     >
       <Box
         sx={{
           width: 100,
           height: 100,
-          background: 'linear-gradient(35deg,rgb(131, 52, 0), rgb(78, 39, 110))',
+          background: 'linear-gradient(35deg, rgb(239, 48, 84), rgb(78, 39, 110))',
           borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
@@ -95,12 +97,12 @@ export default function CupCard ({ cup }) {
         sx={{
           width: '80%',
           marginTop: 1,
-          background: 'linear-gradient(35deg,rgb(131, 52, 0), rgb(78, 39, 110))',
+          background: 'linear-gradient(35deg, rgb(239, 48, 84), rgb(78, 39, 110))',
           color: '#fff',
           fontWeight: 'bold',
           transition: 'transform 0.3s ease, background 0.3s ease',
           '&:hover': {
-            background: 'linear-gradient(35deg,rgb(78, 39, 110), rgb(131, 52, 0))',
+            background: 'linear-gradient(35deg,rgb(78, 39, 110), rgb(239, 48, 84))',
             transform: 'scale(1.05)',
           },
         }}

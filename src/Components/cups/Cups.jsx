@@ -1,18 +1,14 @@
 import cups from '../../data/cups'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
-import Hero from './Hero'
+import Hero from '../Hero'
 import { Grid2 as Grid } from '@mui/material'
 import CupCard from './CupCard'
 
-const StyledBox = styled(Box)(({ theme }) => {
+const StyledBox = styled(Box)(() => {
   return {
     alignSelf: 'center',
     width: '100%',
-    borderRadius: theme.shape.borderRadius,
-    border: '1px solid',
-    borderColor: theme.palette.primary.dark,
-    boxShadow: '0 0 2px 3px hsl(281, 50.00%, 50.00%)',
     padding: '20px 0px 20px 0px'
   }
 })

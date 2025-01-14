@@ -1,4 +1,5 @@
 import { styled, Paper, Box, Typography, Button } from '@mui/material'
+import Flag from '../styled/Flag'
 
 const Image = styled('img')()
 
@@ -8,17 +9,12 @@ const Item = styled(Paper)(({ theme }) => ({
   justifyContent: 'space-between',
   padding: theme.spacing(1),
   borderRadius: theme.shape.borderRadius,
-  boxShadow: theme.shadows[1],
+  border: '1px solid',
+  borderColor: theme.palette.primary.dark,
+  boxShadow: '0 0 2px 3px hsl(349, 85.70%, 30%)',
   background: 'linear-gradient(145deg, #1f1f1f, #333333)',
   width: '95%'
 }))
-
-const Flag = styled('img')({
-  width: '35px',
-  height: '25px',
-  borderRadius: '5px',
-  marginLeft: '10px',
-})
 
 export default function LeagueItem({ league }) {
   return (
@@ -31,7 +27,7 @@ export default function LeagueItem({ league }) {
           sx={{
             width: 100,
             height: 100,
-            background: 'linear-gradient(35deg,rgb(131, 52, 0), rgb(78, 39, 110))',
+            background: 'linear-gradient(35deg, rgb(239, 48, 84), rgb(78, 39, 110))',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -60,12 +56,12 @@ export default function LeagueItem({ league }) {
         variant="contained"
         sx={{
           width: '10%',
-          background: 'linear-gradient(35deg,rgb(131, 52, 0), rgb(78, 39, 110))',
+          background: 'linear-gradient(35deg, rgb(239, 48, 84), rgb(78, 39, 110))',
           color: '#fff',
           fontWeight: 'bold',
           transition: 'transform 0.3s ease, background 0.3s ease',
           '&:hover': {
-            background: 'linear-gradient(35deg,rgb(78, 39, 110), rgb(131, 52, 0))',
+            background: 'linear-gradient(35deg,rgb(78, 39, 110), rgb(239, 48, 84))',
             transform: 'scale(1.05)',
           },
         }}
