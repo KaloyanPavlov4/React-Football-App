@@ -1,14 +1,5 @@
 export default [
   {
-    'id': 2013,
-    'area': {
-      'name': 'Brazil',
-      'flag': 'https://crests.football-data.org/764.svg'
-    },
-    'name': 'Campeonato Brasileiro Série A',
-    'emblem': 'https://crests.football-data.org/bsa.png',
-  },
-  {
     'id': 2021,
     'area': {
       'name': 'England',
