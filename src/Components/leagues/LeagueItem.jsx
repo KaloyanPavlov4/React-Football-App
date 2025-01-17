@@ -1,9 +1,10 @@
-import { styled, Paper, Box, Typography, Button } from '@mui/material'
+import { useNavigate } from 'react-router'
+import { styled, Box, Typography, Button } from '@mui/material'
 import Flag from '../styled/Flag'
 
 const Image = styled('img')()
 
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -16,9 +17,15 @@ const Item = styled(Paper)(({ theme }) => ({
   width: '95%'
 }))
 
-export default function LeagueItem({ league }) {
+const LeagueItem = ({ league }) => {
+  const nav = useNavigate()
+
+  function navigateToLeagueDetails(id) {
+    return nav(`/leagues/${id}`)
+  }
+
   return (
-    <Item>
+    <Item sx= {{ flexDirection: { xs:'column', sm:'row' } }}>
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
@@ -43,9 +50,14 @@ export default function LeagueItem({ league }) {
           />
         </Box>
         <Box sx={{ marginLeft: 2 }}>
-          <Typography variant="h6">{league.name}</Typography>
-          <Box display="flex" alignItems="center" justifyContent="flex-start">
-            <Typography variant="body2" color="textSecondary">
+          <Typography variant='h6'>{league.name}</Typography>
+          <Box
+            sx={{
+              display:'flex',
+              alignItems:'center',
+              justifyContent:'flex-start'
+            }}>
+            <Typography variant='body2' sx = {{ color:'textSecondary' }}>
               {league.area.name}
             </Typography>
             <Flag src={league.area.flag} alt={`${league.area.name} flag`} />
@@ -53,9 +65,9 @@ export default function LeagueItem({ league }) {
         </Box>
       </Box>
       <Button
-        variant="contained"
+        variant='contained'
         sx={{
-          width: '10%',
+          width: { xs:'80%', sm:'10%' },
           background: 'linear-gradient(35deg, rgb(239, 48, 84), rgb(78, 39, 110))',
           color: '#fff',
           fontWeight: 'bold',
@@ -65,9 +77,12 @@ export default function LeagueItem({ league }) {
             transform: 'scale(1.05)',
           },
         }}
+        onClick={() => navigateToLeagueDetails(league.id)}
       >
           View More
       </Button>
     </Item>
   )
 }
+
+export default LeagueItem

@@ -1,4 +1,5 @@
-import leagues from '../../data/leagues'
+import { useEffect, useState } from 'react'
+import { getAllLeagues } from '../../services/football-service'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import Hero from '../Hero'
@@ -18,11 +19,21 @@ const StyledBox = styled(Box)(() => {
   }
 })
 
+const Leagues = () => {
+  const [leagues, setLeagues] = useState([])
 
-export default function Leagues() {
+  useEffect(() => {
+    const fetchLeagues = async () => {
+      setLeagues(await getAllLeagues())
+    }
+
+    fetchLeagues()
+  }, [])
+
   return (
     <Box sx={(theme) => ({ marginTop: theme.spacing(12) })}>
-      <Hero header={'Leagues'} body={'See them'}/>
+      <Hero header={'Discover the Best of European Football'}
+        body={'Explore the top leagues that define the beautiful game across Europe'}/>
       <StyledBox>
         {leagues.map((league) => (
           <LeagueItem key={league.id} league={league}/>
@@ -31,3 +42,5 @@ export default function Leagues() {
     </Box>
   )
 }
+
+export default Leagues

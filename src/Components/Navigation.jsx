@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { styled, alpha } from '@mui/material/styles'
-import Box from '@mui/material/Box'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
-import MenuItem from '@mui/material/MenuItem'
-import Drawer from '@mui/material/Drawer'
+import { Box,
+  AppBar,
+  Toolbar,
+  Button,
+  Container,
+  MenuItem,
+  Drawer } from '@mui/material/'
 import MenuIcon from '@mui/icons-material/Menu'
 import IconButton from '@mui/material/IconButton'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
-import { Typography } from '@mui/material'
+import { useNavigate } from 'react-router'
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -30,11 +30,15 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const nav = useNavigate()
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen)
   }
 
+  const goTo = (to) => {
+    return nav(to)
+  }
 
   return (
     <AppBar
@@ -48,16 +52,16 @@ export default function Navigation() {
     >
       <Container maxWidth='lg'>
         <StyledToolbar variant='dense' disableGutters>
-          <Typography sx={{ mr: 3 }} color='primary'>Football Api</Typography>
+          <Button sx={{ mr: 3 }} color='primary' onClick={() => goTo('/')}>Football Frontend</Button>
           <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, alignItems: 'center', px: 0 }}>
-            <Button variant='text' color='primary' size='small'>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/leagues')}>
                 Leagues
             </Button>
-            <Button variant='text' color='primary' size='small'>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/cups')}>
                 Cups
             </Button>
-            <Button variant='text' color='primary' size='small'>
-                Upcoming matches
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/upcoming')}>
+              Upcoming matches
             </Button>
           </Box>
           <Box
@@ -92,9 +96,9 @@ export default function Navigation() {
                   </IconButton>
                 </Box>
 
-                <MenuItem>Leagues</MenuItem>
-                <MenuItem>Cups</MenuItem>
-                <MenuItem>Upcoming matches</MenuItem>
+                <MenuItem onClick={() => goTo('/leagues')}>Leagues</MenuItem>
+                <MenuItem onClick={() => goTo('/cups')}>Cups</MenuItem>
+                <MenuItem onClick={() => goTo('/upcoming')}>Upcoming matches</MenuItem>
               </Box>
             </Drawer>
           </Box>

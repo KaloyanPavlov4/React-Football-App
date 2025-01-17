@@ -4,10 +4,9 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Button,
 } from '@mui/material'
 
-export default function CupCard ({ cup }) {
+const CupCard = ({ cup }) => {
   return (
     <Card
       sx={{
@@ -43,7 +42,7 @@ export default function CupCard ({ cup }) {
         }}
       >
         <CardMedia
-          component="img"
+          component='img'
           sx={{
             width: 70,
             height: 70,
@@ -61,7 +60,7 @@ export default function CupCard ({ cup }) {
         }}
       >
         <Typography
-          variant="h6"
+          variant='h6'
           sx={{
             textAlign: 'center',
             textShadow: '0px 1px 3px rgba(0, 0, 0, 0.6)',
@@ -79,7 +78,7 @@ export default function CupCard ({ cup }) {
           }}
         >
           <CardMedia
-            component="img"
+            component='img'
             sx={{
               width: 24,
               height: 24,
@@ -89,11 +88,11 @@ export default function CupCard ({ cup }) {
             image={cup.area.flag}
             alt={`${cup.area.name} flag`}
           />
-          <Typography variant="body2">{cup.area.name}</Typography>
+          <Typography variant='body2'>{cup.area.name}</Typography>
         </Box>
       </CardContent>
-      <Button
-        variant="contained"
+      {/*<Button
+        variant='contained'
         sx={{
           width: '80%',
           marginTop: 1,
@@ -108,7 +107,9 @@ export default function CupCard ({ cup }) {
         }}
       >
           View More
-      </Button>
+      </Button>*/}
     </Card>
   )
 }
+
+export default CupCard

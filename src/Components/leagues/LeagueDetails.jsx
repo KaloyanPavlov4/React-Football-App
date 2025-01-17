@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
+import { getCompetition } from '../../services/football-service'
 import { Box, Tabs, Tab, Typography, styled } from '@mui/material'
 import TabPanel from '../TabPanel'
-import { getCompetition } from '../../services/football-service'
 import LeagueStandings from './LeagueStandings'
 import LeagueTopScorers from './LeagueTopScorers'
 import LeagueUpcomingMatches from './LeagueUpcomingMatches'
@@ -12,7 +13,8 @@ const Image = styled('img')({
   objectFit: 'contain',
 })
 
-export default function LeagueDetails({ id }) {
+const LeagueDetails = () => {
+  const id = Number(useParams().id)
   const [league, setLeague] = useState({})
   const [value, setValue] = useState(0)
 
@@ -23,15 +25,16 @@ export default function LeagueDetails({ id }) {
     fetchLeague()
   }, [id])
 
+  const handleChange = (event, newValue) => {
+    event.preventDefault()
+    setValue(newValue)
+  }
+
   if (!league || !league.seasons) {
     return null
   }
 
   const lastSeasonWinners = league.seasons.filter((season) => season.winner)[0].winner
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
 
   return (
     <Box sx={{ width: '100%', marginTop: 15 }}>
@@ -57,24 +60,29 @@ export default function LeagueDetails({ id }) {
             padding: 1,
           }}
         />
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, alignItems:{ xs: 'center', md:'flex-start' } }}>
-          <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+            alignItems:{ xs: 'center', md:'flex-start' }
+          }}>
+          <Typography variant='h3' sx={{ fontWeight: 'bold' }}>
             {league.name}
           </Typography>
           <Box
             sx={{
               display: 'flex',
               alignItems: 'center',
-            }}
-          >
-            <Typography variant="body2" color="textSecondary">
+            }}>
+            <Typography variant='body2' color='textSecondary'>
               {league.area.name}
             </Typography>
             <Flag src={league.area.flag} alt={`${league.area.name} flag`} />
           </Box>
         </Box>
         <Box sx={{ marginLeft: { md:'auto' }, textAlign: 'center' }}>
-          <Typography variant="body1" sx={{ fontWeight: 'bold', mb: 1 }}>
+          <Typography variant='body1' sx={{ fontWeight: 'bold', mb: 1 }}>
             Last Season Winners:
           </Typography>
           <Box
@@ -88,9 +96,13 @@ export default function LeagueDetails({ id }) {
             <Image
               src={lastSeasonWinners.crest}
               alt={lastSeasonWinners.shortName}
-              sx={{ width: 50, height: 'auto', background: '#fff', padding: 1 }}
+              sx={{ width: 50,
+                height: 'auto',
+                background: '#fff',
+                padding: 1
+              }}
             />
-            <Typography variant="body2">{lastSeasonWinners.name}</Typography>
+            <Typography variant='body2'>{lastSeasonWinners.name}</Typography>
           </Box>
         </Box>
       </Box>
@@ -99,7 +111,7 @@ export default function LeagueDetails({ id }) {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="basic tabs example"
+          aria-label='basic tabs example'
           TabIndicatorProps={{
             style: { backgroundColor: '#e63946' },
           }}
@@ -114,21 +126,23 @@ export default function LeagueDetails({ id }) {
             },
           }}
         >
-          <Tab label="Standings" />
-          <Tab label="Top Scorers" />
-          <Tab label="Upcoming Matches" />
+          <Tab label='Standings' />
+          <Tab label='Top Scorers' />
+          <Tab label='Upcoming Matches' />
         </Tabs>
       </Box>
 
       <TabPanel value={value} index={0}>
-        <LeagueStandings id={2021}/>
+        <LeagueStandings id={id}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <LeagueTopScorers id={2021}/>
+        <LeagueTopScorers id={id}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <LeagueUpcomingMatches id={2021}/>
+        <LeagueUpcomingMatches id={id}/>
       </TabPanel>
     </Box>
   )
 }
+
+export default LeagueDetails
