@@ -1,0 +1,22 @@
+name: Tests and builds
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  vitest:
+    name: vitest
+    uses: ./.github/workflows/vitest_and_lint.yml
+   
+  playwright:
+    name: playwright
+    needs: vitest
+    uses: ./.github/workflows/playwright.yml
+  
+  builds:
+    name: builds
+    needs: playwright
+    uses: ./.github/workflows/canBuild.yml
