@@ -32,10 +32,6 @@ const Navigation = () => {
   const [open, setOpen] = useState(false)
   const nav = useNavigate()
 
-  const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen)
-  }
-
   const goTo = (to) => {
     setOpen(false)
     return nav(to)
@@ -72,13 +68,13 @@ const Navigation = () => {
               alignItems: 'center',
             }}
           >
-            <IconButton aria-label='Menu button' onClick={toggleDrawer(true)}>
+            <IconButton aria-label='Menu button' onClick={() => setOpen(true)}>
               <MenuIcon />
             </IconButton>
             <Drawer
               anchor='top'
               open={open}
-              onClose={toggleDrawer(false)}
+              onClose={() => setOpen(false)}
               PaperProps={{
                 sx: {
                   top: 'var(--template-frame-height, 0px)',
@@ -92,7 +88,7 @@ const Navigation = () => {
                     justifyContent: 'flex-end',
                   }}
                 >
-                  <IconButton onClick={toggleDrawer(false)}>
+                  <IconButton onClick={() => setOpen(false)}>
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
