@@ -17,6 +17,7 @@
     "type": "git",
     "url": "https://github.com/KaloyanPavlov4/React-Football-App"
   },
+  "homepage": "https://kaloyanpavlov4.github.io/React-Football-App/",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.14.0",

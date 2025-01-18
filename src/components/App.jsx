@@ -13,7 +13,7 @@ import Footer from './Footer'
 const App = () => {
   return (
     <Container>
-      <BrowserRouter>
+      <BrowserRouter basename="/React-Football-App">
         <Navigation/>
         <Routes>
           <Route path='/' element={<Home />} />
