@@ -28,7 +28,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   padding: '8px 12px',
 }))
 
-export default function Navigation() {
+const Navigation = () => {
   const [open, setOpen] = useState(false)
   const nav = useNavigate()
 
@@ -37,6 +37,7 @@ export default function Navigation() {
   }
 
   const goTo = (to) => {
+    setOpen(false)
     return nav(to)
   }
 
@@ -107,3 +108,5 @@ export default function Navigation() {
     </AppBar>
   )
 }
+
+export default Navigation

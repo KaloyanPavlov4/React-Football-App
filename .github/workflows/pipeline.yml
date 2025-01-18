@@ -7,13 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  vitest:
-    name: vitest
-    uses: ./.github/workflows/vitest_and_lint.yml
+  lint:
+    name: lint
+    uses: ./.github/workflows/lint.yml
    
   playwright:
     name: playwright
-    needs: vitest
+    needs: lint
     uses: ./.github/workflows/playwright.yml
   
   builds:
