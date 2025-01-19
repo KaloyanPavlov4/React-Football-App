@@ -1,3 +1,10 @@
+/* IMPORTANT
+  The API that was previously used has a 10 calls per minute limit which can easily break the page.
+  For the project's roadmap a backend is planned that will periodically fetch data from the API and save it to a database.
+  While that is being developed the project uses static data.
+  For more information check the github repository.
+*/
+
 /*const API_KEY = import.meta.env.VITE_API_KEY
 const BASE_URL = '/api'
 const MATCH_STATUSES = ['TIMED', 'LIVE', 'IN_PLAY']*/
