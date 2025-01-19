@@ -46,19 +46,19 @@ test.describe('Buttons correctly navigate to page', () => {
 
   test('Leagues button', async ({ page }) => {
     await page.goto('/')
-    await page.getByTestId('leagues').click()
+    await page.getByTestId('leagues nav').click()
     await expect(page).toHaveURL('/React-Football-App/leagues')
   })
 
   test('Cups button', async ({ page }) => {
     await page.goto('/')
-    await page.getByTestId('cups').click()
+    await page.getByTestId('cups nav').click()
     await expect(page).toHaveURL('/React-Football-App/cups')
   })
 
   test('Upcoming matches button', async ({ page }) => {
     await page.goto('/')
-    await page.getByTestId('upcoming').click()
+    await page.getByTestId('upcoming matches nav').click()
     await expect(page).toHaveURL('/React-Football-App/upcoming')
   })
 })
