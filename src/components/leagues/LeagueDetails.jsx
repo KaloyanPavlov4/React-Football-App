@@ -111,7 +111,7 @@ const LeagueDetails = () => {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label='basic tabs example'
+          aria-label='Tabs for standings, top scorers and upcoming matches'
           TabIndicatorProps={{
             style: { backgroundColor: '#e63946' },
           }}
@@ -128,17 +128,17 @@ const LeagueDetails = () => {
         >
           <Tab label='Standings' />
           <Tab label='Top Scorers' />
-          <Tab label='Upcoming Matches' />
+          <Tab label='Upcoming Matches' data-testid='upcoming matches button'/>
         </Tabs>
       </Box>
 
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} data-testid='standings tab'>
         <LeagueStandings id={id}/>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} data-testid='top scorers tab'>
         <LeagueTopScorers id={id}/>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} data-testid='upcoming tab'>
         <LeagueUpcomingMatches id={id}/>
       </TabPanel>
     </Box>

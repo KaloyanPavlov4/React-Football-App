@@ -52,13 +52,13 @@ const Navigation = () => {
         <StyledToolbar variant='dense' disableGutters>
           <Button sx={{ mr: 3 }} color='primary' onClick={() => goTo('/')}>Football Frontend</Button>
           <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, alignItems: 'center', px: 0 }}>
-            <Button variant='text' color='primary' size='small' onClick={() => goTo('/leagues')} data-testid='leagues'>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/leagues')} data-testid='leagues nav'>
                 Leagues
             </Button>
-            <Button variant='text' color='primary' size='small' onClick={() => goTo('/cups')} data-testid='cups'>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/cups')} data-testid='cups nav'>
                 Cups
             </Button>
-            <Button variant='text' color='primary' size='small' onClick={() => goTo('/upcoming')} data-testid='upcoming'>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/upcoming')} data-testid='upcoming matches nav'>
               Upcoming matches
             </Button>
           </Box>

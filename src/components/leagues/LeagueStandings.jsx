@@ -65,7 +65,8 @@ const LeagueStandings = ({ id }) => {
                     transform: 'scale(1.02)',
                     cursor: 'pointer' }
                 }}
-                onClick={() => navigateToTeamDetails(standing.team.id)}>
+                onClick={() => navigateToTeamDetails(standing.team.id)}
+                data-testid='team row'>
                 <TableCell>{standing.position}</TableCell>
                 <TableCell>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
