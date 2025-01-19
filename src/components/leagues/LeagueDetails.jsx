@@ -37,7 +37,7 @@ const LeagueDetails = () => {
   const lastSeasonWinners = league.seasons.filter((season) => season.winner)[0].winner
 
   return (
-    <Box sx={{ width: '100%', marginTop: 15 }}>
+    <Box sx={(theme) => ({ width: '100%', marginTop: theme.spacing(12), marginBottom: theme.spacing(12) })}>
       <Box
         sx={{
           display: 'flex',

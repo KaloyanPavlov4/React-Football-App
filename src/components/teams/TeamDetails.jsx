@@ -51,7 +51,7 @@ const TeamDetails = () => {
   }
 
   return (
-    <Box sx={{ padding: 4, marginTop:12 }}>
+    <Box sx={(theme) => ({ padding: 4, marginTop:theme.spacing(12), marginBottom:theme.spacing(12) })}>
       <TeamInfoBox>
         <Crest src={team.crest} alt={team.name} />
         <Box>

@@ -24,7 +24,7 @@ const Cups = () => {
   }, [])
 
   return (
-    <Box sx={(theme) => ({ marginTop: theme.spacing(12) })}>
+    <Box sx={(theme) => ({ marginTop: theme.spacing(12), marginBottom: theme.spacing(12) })}>
       <Hero header={'Discover the most prestigious tournaments in football'}
         body={'Work in progress!'}/>
       <StyledBox>

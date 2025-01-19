@@ -31,7 +31,7 @@ const Leagues = () => {
   }, [])
 
   return (
-    <Box sx={(theme) => ({ marginTop: theme.spacing(12) })}>
+    <Box sx={(theme) => ({ marginTop: theme.spacing(12), marginBottom: theme.spacing(6) })}>
       <Hero header={'Discover the Best of European Football'}
         body={'Explore the top leagues that define the beautiful game across Europe'}/>
       <StyledBox>

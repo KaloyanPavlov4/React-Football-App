@@ -4,7 +4,7 @@ import LeagueDetails from './LeagueDetails'
 
 const UpcomingMatches = () => {
   return (
-    <Box>
+    <Box sx = {(theme) => ({ marginBottom: theme.spacing(14) })}>
       <Box>
         <LeagueDetails id={2021}/>
         <LeagueUpcomingMatches id={2021} take={8}/>
