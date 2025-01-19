@@ -46,18 +46,19 @@ const Navigation = () => {
         backgroundImage: 'none',
         mt: 'calc(var(--template-frame-height, 0px) + 28px)',
       }}
+      data-testid='navigation'
     >
       <Container maxWidth='lg'>
         <StyledToolbar variant='dense' disableGutters>
           <Button sx={{ mr: 3 }} color='primary' onClick={() => goTo('/')}>Football Frontend</Button>
           <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, alignItems: 'center', px: 0 }}>
-            <Button variant='text' color='primary' size='small' onClick={() => goTo('/leagues')}>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/leagues')} data-testid='leagues'>
                 Leagues
             </Button>
-            <Button variant='text' color='primary' size='small' onClick={() => goTo('/cups')}>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/cups')} data-testid='cups'>
                 Cups
             </Button>
-            <Button variant='text' color='primary' size='small' onClick={() => goTo('/upcoming')}>
+            <Button variant='text' color='primary' size='small' onClick={() => goTo('/upcoming')} data-testid='upcoming'>
               Upcoming matches
             </Button>
           </Box>
